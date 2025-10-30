@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 bg-white shadow z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
         <Link to="/" className="text-xl font-bold text-red-600">
-          Sample
+          ProDiligix
         </Link>
         <div className="flex space-x-6">
           <Link to="/" className="hover:text-red-500">Home</Link>
