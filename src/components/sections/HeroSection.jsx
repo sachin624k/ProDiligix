@@ -1,24 +1,39 @@
+import courierImg from "../assets/images/courier.png";
+import "./HeroSection.css";
+
 const HeroSection = () => {
   return (
-    <section className="bg-gray-50 py-20">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
-        <div className="flex-1">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Global Sourcing Made Easy
+    <section className="hero-section">
+      <div className="hero-container">
+        <div className="hero-content">
+          <span className="hero-label animate-up">PROCUREMENT AS A SERVICE</span>
+
+          <h1 className="hero-title">
+            <span className="hero-title-light animate-up delay-1">
+              Simplify and Centralize
+            </span>{" "}
+            <span className="hero-title-bold animate-up delay-2">
+              Your Indirect Procurement
+            </span>
+            <br className="hidden md:block" />
+            <span className="hero-title-light animate-up delay-3">
+              with ProDiligix PAAS
+            </span>
           </h1>
-          <p className="text-gray-600 mb-6">
-            Empowering businesses with reliable sourcing, manufacturing, and supply solutions.
+
+          <p className="hero-description animate-up delay-4">
+            ProDiligix unifies all your outsourcing needs on one intelligent
+            platform, empowering your business to grow without limits.
           </p>
-          <button className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition">
-            Explore Catalog
-          </button>
         </div>
-        <div className="flex-1">
+
+        <div className="hero-image-container">
           <img
-            src="/images/hero/hero-image.png"
-            alt="Global sourcing"
-            className="w-full"
+            src={courierImg}
+            alt="Procurement as a service"
+            className="hero-image"
           />
+          <div className="hero-gradient"></div>
         </div>
       </div>
     </section>
