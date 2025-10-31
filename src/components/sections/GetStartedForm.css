@@ -1,0 +1,213 @@
+.get-started-form-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: -4rem;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.get-started-form {
+  background: #fff;
+  box-shadow: 0 6px 48px rgba(40, 60, 107, 0.13);
+  border-radius: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 980px;
+  width: 96%;
+  padding: 2.5rem 3rem 2.5rem 2.2rem;
+}
+
+.gs-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  max-width: 260px;
+  flex: 0 0 230px;
+}
+.gs-map {
+  width: 140px;
+  height: 140px;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: 0 2px 18px rgba(35,74,154,0.11);
+  margin-bottom: 1.2rem;
+}
+.gs-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.gs-label {
+  font-weight: 600;
+  font-size: 1.22rem;
+  color: #2443b7;
+  margin-bottom: 2px;
+}
+.gs-label-bold {
+  font-weight: 800;
+  font-size: 1.32rem;
+  color: #13275c;
+}
+
+.gs-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+.gs-row {
+  display: flex;
+  gap: 1.1rem;
+  width: 100%;
+}
+
+/* Inputs & selects styling */
+.gs-input {
+  padding: 0.85rem 1.05rem;
+  border-radius: 0.7rem;
+  border: 1px solid #d1d7e0;
+  background: #f5f8fd;
+  outline: none;
+  font-size: 1.13rem;
+  width: 100%;
+  transition: border-color 0.14s;
+  color: #232a34;
+}
+
+.gs-input::placeholder,
+.gs-input-phone::placeholder {
+  color: #7e8191;
+  opacity: 1;
+}
+
+.gs-input option[value=""],
+.gs-phone-country option[value=""] {
+  color: #7e8191 !important;
+}
+.gs-input:required:invalid,
+.gs-phone-country:required:invalid {
+  color: #7e8191;
+}
+.gs-input:not(:required):not([value=""]),
+.gs-phone-country:not(:required):not([value=""]) {
+  color: #232a34;
+}
+.gs-input:focus,
+.gs-phone-country:focus,
+.gs-input-phone:focus {
+  border-color: #2d5dd5;
+}
+
+/* Phone pill effect with non-collapsing fields */
+.gs-phone-field {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  border: 1px solid #d1d7e0;
+  border-radius: 0.7rem;
+  background: #f5f8fd;
+  height: 56px;
+  overflow: hidden;
+}
+.gs-phone-country {
+  border: none;
+  background: transparent;
+  width: 110px;
+  min-width: 85px;
+  max-width: 135px;
+  padding: 0 1.1rem 0 1.1rem;
+  font-size: 1.13rem;
+  outline: none;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #d1d7e0;
+  color: #232a34;
+  appearance: none;
+}
+.gs-input-phone {
+  border: none;
+  background: transparent;
+  flex: 1;
+  padding: 0 1.1rem;
+  font-size: 1.13rem;
+  outline: none;
+  color: #232a34;
+  display: flex;
+  align-items: center;
+}
+
+.gs-button-row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.gs-submit {
+  width: 100%;
+  background: #246bed;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.85rem;
+  padding: 1.1rem 0;
+  font-size: 1.19rem;
+  cursor: pointer;
+  transition: background .19s;
+  box-shadow: 0 2px 23px rgba(60, 98, 160, 0.12);
+  margin-left: 0;
+}
+.gs-submit:hover {
+  background: #1741a2;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+  .get-started-form {
+    flex-direction: column;
+    padding: 1.1rem 1rem;
+    gap: 1.1rem;
+    max-width: 99vw;
+  }
+  .gs-info {
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+    min-width: 0;
+    max-width: 100%;
+    flex: none;
+  }
+  .gs-map {
+    width: 85px;
+    height: 85px;
+  }
+  .gs-row {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .gs-fields {
+    gap: 0.9rem;
+  }
+  .gs-button-row {
+    width: 100%;
+    justify-content: center;
+  }
+  .gs-submit {
+    width: 100%;
+  }
+  .gs-phone-field {
+    height: 44px;
+  }
+  .gs-phone-country,
+  .gs-input-phone {
+    font-size: 1rem;
+    height: 44px;
+  }
+  .gs-phone-country {
+    width: 70px;
+    min-width: 55px;
+    max-width: 90px;
+  }
+}

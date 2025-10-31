@@ -1,0 +1,26 @@
+/* Existing gradient and logo already fine */
+.navbar-gradient {
+  background: linear-gradient(90deg, #4789EA 0%, #2D5DD5 70%, #253F83 100%);
+}
+
+.navbar-logo {
+  height: 2.4rem;
+}
+
+@media (min-width: 768px) {
+  .navbar-logo {
+    height: 3rem;
+  }
+}
+
+/* Proper hover for your nav links */
+.navbar-link {
+  transition: color 0.18s;
+  color: #fff; /* Assuming default is white */
+}
+
+.navbar-link:hover {
+  color: #1a2a51; /* A darker blue shade */
+  text-decoration: underline;
+}
+
