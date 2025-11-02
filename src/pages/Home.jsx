@@ -5,7 +5,7 @@ import OurServices from "../components/sections/OurServices"
 import Challenges from "../components/sections/Challenges";
 import WhyPro from "../components/sections/WhyPro";
 import SmartSourcing from "../components/sections/SmartSourcing";
-import MetricsSection from "../components/sections/MetricsSection";
+import MoreAboutCompany from "../components/sections/MoreAboutCompany";
 import ContactSection from "../components/sections/ContactSection";
 
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
       <Challenges />
       <WhyPro />
       {/* <SmartSourcing /> */}
-      <MetricsSection />
+      <MoreAboutCompany />
       <ContactSection />
     </>
   );
