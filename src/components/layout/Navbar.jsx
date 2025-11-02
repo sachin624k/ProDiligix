@@ -155,7 +155,7 @@ const Navbar = () => {
             to="/get-quote"
             className="block mt-2 rounded px-3 py-2 font-semibold bg-white text-[#2D5DD5] hover:bg-blue-100 hover:text-[#253F83] transition"
           >
-            Get Quote
+            Login
           </Link>
         </div>
       )}
