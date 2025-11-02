@@ -1,7 +1,9 @@
 import React from "react";
+import { motion } from "framer-motion";
+import "./Challenges.css";
+
 import centralImg from "../assets/images/map.png";
 import costImg from "../assets/images/courier.png";
-
 
 const challenges = [
   {
@@ -33,42 +35,54 @@ const challenges = [
 
 const Challenges = () => {
   return (
-<section className="py-20 bg-gray-100 text-gray-900 relative overflow-hidden">
-  <div className="max-w-7xl mx-auto px-6">
-    <div className="text-center mb-16">
-      <h2 className="text-4xl font-bold mb-4 text-gray-900">
-        How We Address These Challenges
-      </h2>
-      <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed">
-        At ProDiligix, we don't just solve problems — we build sustainable systems that empower 
-        businesses to grow smarter, faster, and more cost-effectively. Our approach is designed 
-        to eliminate inefficiencies, centralize processes, and unlock measurable value across 
-        procurement, logistics, IT, and corporate services.
-      </p>
-    </div>
-
-    <div className="grid md:grid-cols-3 gap-8">
-      {challenges.map((item, index) => (
-        <div
-          key={index}
-          className="relative group rounded-2xl overflow-hidden shadow-lg transition-all duration-500 hover:scale-105"
+    <section className="challenges-section">
+      <div className="challenges-container">
+        {/* Animated Header */}
+        <motion.div
+          className="challenges-header"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
         >
-          <img
-            src={item.img}
-            alt={item.title}
-            className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-          <div className="relative p-6 flex flex-col justify-end h-64 text-white">
-            <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-            <p className="text-sm text-gray-200">{item.desc}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+          <h2 className="challenges-title">
+            How We Address <span>These Challenges</span>
+          </h2>
+          <p className="challenges-subtext">
+            At ProDiligix, we don't just solve problems — we build sustainable systems
+            that empower businesses to grow smarter, faster, and more cost-effectively.
+            Our roadmap approach ensures continuous improvement, efficiency, and measurable value.
+          </p>
+        </motion.div>
 
+        {/* Timeline */}
+        <div className="challenges-timeline">
+          {challenges.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="challenge-item"
+            >
+              <div className="timeline-dot" />
+              <div className="challenge-card">
+                <div className="challenge-card-content">
+                  <div className="challenge-image-wrapper">
+                    <img src={item.img} alt={item.title} className="challenge-image" />
+                  </div>
+                  <div className="challenge-text">
+                    <h3 className="challenge-title">{item.title}</h3>
+                    <p className="challenge-desc">{item.desc}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
