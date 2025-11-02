@@ -41,27 +41,29 @@ const Navbar = () => {
                   <path d="M6 8L10 12L14 8" stroke="#fff" strokeWidth="2" />
                 </svg>
               </button>
-{servicesOpen && (
-  <div className="absolute left-0 mt-1 w-56 bg-white/95 backdrop-blur-md border border-blue-100 shadow-xl rounded-2xl z-20 overflow-hidden animate-fadeIn">
-    {[
-      { path: "/LogisticsManagement", label: "Logistics Management" },
-      { path: "/CorporateGifting", label: "Corporate Gifting" },
-      { path: "/Eventmanagement", label: "Event Management" },
-      { path: "/ITsolutions", label: "IT Solutions" },
-      { path: "/StampPepper", label: "Stamp Pepper" },
-      { path: "/TeamBuilding", label: "Team Building" },
-    ].map((item) => (
-      <Link
-        key={item.path}
-        to={item.path}
-        className="block px-5 py-2.5 text-[#2D5DD5] font-medium hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 flex items-center gap-2"
-      >
-        <span>{item.label}</span>
-      </Link>
-    ))}
-  </div>
-)}
-
+              {servicesOpen && (
+                <div className="absolute left-0 mt-1 w-56 bg-white/95 backdrop-blur-md border border-blue-100 shadow-xl rounded-2xl z-20 overflow-hidden animate-fadeIn">
+                  {[
+                    {
+                      path: "/LogisticsManagement",
+                      label: "Logistics Management",
+                    },
+                    { path: "/CorporateGifting", label: "Corporate Gifting" },
+                    { path: "/Eventmanagement", label: "Event Management" },
+                    { path: "/ITsolutions", label: "IT Solutions" },
+                    { path: "/StampPepper", label: "Stamp Pepper" },
+                    { path: "/TeamBuilding", label: "Team Building" },
+                  ].map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className="block px-5 py-2.5 text-[#2D5DD5] font-medium hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 flex items-center gap-2"
+                    >
+                      <span>{item.label}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
             <Link
               to="/businesses"
@@ -122,22 +124,40 @@ const Navbar = () => {
             {servicesOpen && (
               <div className="pl-4">
                 <Link
-                  to="/service1"
+                  to="/LogisticsManagement"
                   className="block py-2 text-white navbar-link"
                 >
-                  Service 1
+                  Logistics Management
                 </Link>
                 <Link
-                  to="/service2"
+                  to="/CorporateGifting"
                   className="block py-2 text-white navbar-link"
                 >
-                  Service 2
+                  Corporate Gifting
                 </Link>
                 <Link
-                  to="/service3"
+                  to="/Eventmanagement"
                   className="block py-2 text-white navbar-link"
                 >
-                  Service 3
+                  Event management
+                </Link>
+                <Link
+                  to="/ITsolutions"
+                  className="block py-2 text-white navbar-link"
+                >
+                  IT solutions
+                </Link>
+                <Link
+                  to="/StampPepper"
+                  className="block py-2 text-white navbar-link"
+                >
+                  Stamp Pepper
+                </Link>
+                <Link
+                  to="/TeamBuilding"
+                  className="block py-2 text-white navbar-link"
+                >
+                  Team Building
                 </Link>
               </div>
             )}
