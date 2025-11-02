@@ -1,0 +1,110 @@
+.smart-horizontal-section {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 8rem auto;
+  padding: 6rem 1.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* ===== Horizontal Line ===== */
+.horizontal-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  border-radius: 50px;
+  z-index: 1;
+}
+
+/* ===== Content Blocks ===== */
+.smart-content {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+}
+
+.top-content {
+  margin-bottom: 5rem;
+  border-top: 2px solid transparent;
+}
+
+.bottom-content {
+  margin-top: 5rem;
+  border-bottom: 2px solid transparent;
+}
+
+/* ===== Titles & Text ===== */
+.smart-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.smart-title span {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.smart-desc {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+.smart-highlight {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #0056b3;
+  line-height: 1.8;
+}
+
+/* ===== Subtle shadow effect on animation ===== */
+.smart-content::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: radial-gradient(rgba(0, 123, 255, 0.1), transparent 70%);
+  transition: all 0.8s ease;
+  z-index: -1;
+}
+
+.smart-content:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .horizontal-line {
+    display: none;
+  }
+
+  .smart-title {
+    font-size: 1.6rem;
+  }
+
+  .smart-desc,
+  .smart-highlight {
+    font-size: 1rem;
+  }
+
+  .smart-content {
+    padding: 2rem 1rem;
+  }
+}

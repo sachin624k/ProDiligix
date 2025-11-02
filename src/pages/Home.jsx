@@ -3,8 +3,9 @@ import GetStartedForm from "../components/sections/GetStartedForm";
 import InfoSection from "../components/sections/InfoSection";
 import OurServices from "../components/sections/OurServices"
 import Challenges from "../components/sections/Challenges";
+import WhyPro from "../components/sections/WhyPro";
+import SmartSourcing from "../components/sections/SmartSourcing";
 import MetricsSection from "../components/sections/MetricsSection";
-import BlogPreview from "../components/sections/BlogPreview";
 import ContactSection from "../components/sections/ContactSection";
 
 const Home = () => {
@@ -15,8 +16,9 @@ const Home = () => {
       {/* <InfoSection /> */}
       <OurServices /> 
       <Challenges />
+      <WhyPro />
+      {/* <SmartSourcing /> */}
       <MetricsSection />
-      <BlogPreview />
       <ContactSection />
     </>
   );
