@@ -2,34 +2,37 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./Challenges.css";
 
-import centralImg from "../assets/images/map.png";
-import costImg from "../assets/images/courier.png";
+import centImg from "../assets/images/cent.png";
+import costoptImg from "../assets/images/costopt.png";
+import realImg from "../assets/images/real.png";
+import techImg from "../assets/images/tech.png";
+import seamImg from "../assets/images/seam.png";
 
 const challenges = [
   {
     title: "Centralized Vendor Management",
     desc: "One platform, multiple services. We unify your procurement, logistics, IT, and corporate needs under a single dashboard.",
-    img: centralImg,
+    img: centImg,
   },
   {
     title: "Cost Optimization & Transparency",
     desc: "Leverage competitive pricing and clear reporting to ensure every rupee spent delivers maximum impact.",
-    img: costImg,
+    img: costoptImg,
   },
   {
     title: "Real-Time Visibility & Control",
     desc: "End-to-end tracking, smart dashboards, and performance insights that empower decision-making.",
-    img: centralImg,
+    img: realImg,
   },
   {
     title: "Technology-Driven Automation",
     desc: "Streamlined processes with AI, automation, and digital tools to save time, reduce errors, and enhance efficiency.",
-    img: centralImg,
+    img: techImg,
   },
   {
     title: "Seamless Execution & Reliability",
     desc: "From planning to delivery, we ensure smooth operations, on-time commitments, and measurable outcomes.",
-    img: centralImg,
+    img: seamImg,
   },
 ];
 
