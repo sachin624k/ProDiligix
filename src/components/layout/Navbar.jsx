@@ -57,7 +57,7 @@ const Navbar = () => {
                     <Link
                       key={item.path}
                       to={item.path}
-                      className="block px-5 py-2.5 text-[#2D5DD5] font-medium hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 flex items-center gap-2"
+                      className="px-5 py-2.5 block  text-[#2D5DD5] font-medium hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 flex items-center gap-2"
                     >
                       <span>{item.label}</span>
                     </Link>
