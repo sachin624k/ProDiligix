@@ -3,7 +3,7 @@ import Layout from "../components/layout/Layout.jsx";
 import Home from "../pages/Home.jsx";
 import Catalog from "../pages/Catalog.jsx";
 import About from "../pages/About.jsx";
-import Contact from "../pages/Contact.jsx";
+import Contact from "../pages/contact.jsx";
 import Blog from "../pages/Blog.jsx";
 import BlogDetail from "../pages/BlogDetail.jsx";
 import LogisticsManagement from "../pages/ServicesPage/LogisticsManagement.jsx";
