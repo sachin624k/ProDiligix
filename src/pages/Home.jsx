@@ -13,9 +13,9 @@ const Home = () => {
     <>
       <HeroSection />
       <GetStartedForm />
-      {/* <InfoSection /> */}
       <OurServices /> 
       <Challenges />
+      <InfoSection />
       <WhyPro />
       {/* <SmartSourcing /> */}
       <MoreAboutCompany />
