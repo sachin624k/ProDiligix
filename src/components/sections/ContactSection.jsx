@@ -1,52 +1,77 @@
-import React, { useState } from 'react';
-import { Clock, Users, Zap, Eye } from 'lucide-react';
+import React, { useState } from "react";
+import { Clock, Zap } from "lucide-react";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
-    userType: 'buyer',
-    industry: '',
-    name: '',
-    company: '',
-    email: '',
-    countryCode: '+1',
-    phone: '',
-    requirement: ''
+    industry: "",
+    name: "",
+    company: "",
+    email: "",
+    countryCode: "+91",
+    phone: "",
+    requirement: "",
   });
 
-  const handleSubmit = () => {
-    console.log('Form submitted:', formData);
-    alert('Form submitted successfully!');
-  };
-
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
+  // Handle form submission (ready for backend integration)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // 🔹 Example POST request (you’ll replace the URL later)
+      const response = await fetch("https://your-backend-api.com/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Form submitted successfully!");
+        setFormData({
+          userType: "buyer",
+          industry: "",
+          name: "",
+          company: "",
+          email: "",
+          countryCode: "+91",
+          phone: "",
+          requirement: "",
+        });
+      } else {
+        alert("Something went wrong. Try again!");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Network error. Please check your connection.");
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-6">
-      <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-8 items-center">
+    <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-12 px-6 flex items-center justify-center">
+      <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-8 items-start">
         {/* Left Section */}
         <div className="text-white space-y-8">
-          <div className='text-center'>
-            <h1 className="text-2xl md:text-2xl font-bold mb-3 ">
-              Powering the Global Supply Chain
-            </h1>
+          <div className="text-center">
+            <h1 className="text-2xl font-bold mb-3">Powering the Global Supply Chain</h1>
             <p className="text-slate-300 text-lg">
               Partnering with you from Sourcing to Delivery
             </p>
           </div>
 
           {/* Feature Cards */}
-          <div className="grid grid-cols-2 gap-4">
-            {/* Card 1 */}
-            <div className="bg-red-50 rounded-2xl p-6 text-center space-y-3">
+          <div className="grid grid-cols-2 gap-4 justify-center">
+            <div className="bg-red-50 rounded-2xl p-5 text-center space-y-3">
               <div className="flex justify-center">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                  <Zap className="w-6 h-6 text-red-500" strokeWidth={2.5} />
+                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-red-500" strokeWidth={2.5} />
                 </div>
               </div>
               <div className="text-slate-800">
@@ -55,42 +80,10 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Card 2 */}
-            <div className="bg-amber-50 rounded-2xl p-6 text-center space-y-3">
+            <div className="bg-purple-50 rounded-2xl p-5 text-center space-y-3">
               <div className="flex justify-center">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                  <div className="relative">
-                    <div className="w-6 h-6 border-2 border-red-500 rounded-full"></div>
-                    <div className="absolute top-0 left-0 w-2 h-2 bg-red-500 rounded-full"></div>
-                    <div className="absolute top-2 right-0 w-2 h-2 bg-red-500 rounded-full"></div>
-                    <div className="absolute bottom-0 left-2 w-2 h-2 bg-red-500 rounded-full"></div>
-                  </div>
-                </div>
-              </div>
-              <div className="text-slate-800">
-                <p className="font-semibold">4-8 weeks avg.</p>
-                <p className="text-sm text-slate-600">Production Cycle</p>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-blue-50 rounded-2xl p-6 text-center space-y-3">
-              <div className="flex justify-center">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                  <Users className="w-6 h-6 text-red-500" strokeWidth={2.5} />
-                </div>
-              </div>
-              <div className="text-slate-800">
-                <p className="font-semibold">1000+ Supplier</p>
-                <p className="text-sm text-slate-600">Partners</p>
-              </div>
-            </div>
-
-            {/* Card 4 */}
-            <div className="bg-purple-50 rounded-2xl p-6 text-center space-y-3">
-              <div className="flex justify-center">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-red-500" strokeWidth={2.5} />
+                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                  <Clock className="w-5 h-5 text-red-500" strokeWidth={2.5} />
                 </div>
               </div>
               <div className="text-slate-800">
@@ -100,144 +93,112 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Consent Text */}
           <p className="text-slate-400 text-sm text-center max-w-md mx-auto">
-            By submitting this form, you agree ProDiligix may contact you with marketing-related communications regarding products, services, events, and other information you request.
+            By submitting this form, you agree that ProDiligix may contact you with
+            marketing-related communications regarding products, services, and updates.
           </p>
         </div>
 
-        {/* Right Section - Form */}
-        <div className="bg-white rounded-3xl p-8 shadow-2xl">
-          <h2 className="text-2xl font-bold text-slate-800 mb-6">
+        {/* Right Section (Form) */}
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white rounded-3xl p-8 shadow-2xl space-y-5"
+        >
+          <h2 className="text-2xl font-bold text-slate-800 mb-4">
             Get In Touch With Us
           </h2>
 
-          <div className="space-y-5">
-            {/* User Type */}
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-3">
-                Tell us about yourself*
-              </label>
-              <div className="flex gap-6">
-                <label className="flex items-center cursor-pointer">
-                  <input
-                    type="radio"
-                    name="userType"
-                    value="buyer"
-                    checked={formData.userType === 'buyer'}
-                    onChange={handleChange}
-                    className="w-4 h-4 text-red-500 border-slate-300 focus:ring-red-500"
-                  />
-                  <span className="ml-2 text-slate-700">I am a Buyer</span>
-                </label>
-                <label className="flex items-center cursor-pointer">
-                  <input
-                    type="radio"
-                    name="userType"
-                    value="supplier"
-                    checked={formData.userType === 'supplier'}
-                    onChange={handleChange}
-                    className="w-4 h-4 text-red-500 border-slate-300 focus:ring-red-500"
-                  />
-                  <span className="ml-2 text-slate-700">I am a Supplier</span>
-                </label>
-              </div>
-            </div>
+          {/* Industry */}
+          <select
+            name="industry"
+            value={formData.industry}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 text-slate-700"
+            required
+          >
+            <option value="">Select Industry Solutions*</option>
+            <option value="automotive">Automotive</option>
+            <option value="electronics">Electronics</option>
+            <option value="textiles">Textiles & Apparel</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="food">Food & Beverage</option>
+            <option value="manufacturing">Manufacturing</option>
+          </select>
 
-            {/* Industry Dropdown */}
-            <div>
-              <select
-                name="industry"
-                value={formData.industry}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-slate-700"
-                required
-              >
-                <option value="">Select Industry Solutions*</option>
-                <option value="automotive">Automotive</option>
-                <option value="electronics">Electronics</option>
-                <option value="textiles">Textiles & Apparel</option>
-                <option value="healthcare">Healthcare</option>
-                <option value="food">Food & Beverage</option>
-                <option value="manufacturing">Manufacturing</option>
-              </select>
-            </div>
+          {/* Name */}
+          <input
+            type="text"
+            name="name"
+            placeholder="Name*"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500"
+            required
+          />
 
-            {/* Name */}
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={formData.name}
+          {/* Company */}
+          <input
+            type="text"
+            name="company"
+            placeholder="Company"
+            value={formData.company}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500"
+          />
+
+          {/* Email */}
+          <input
+            type="email"
+            name="email"
+            placeholder="Email*"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500"
+            required
+          />
+
+          {/* Phone */}
+          <div className="flex gap-3">
+            <select
+              name="countryCode"
+              value={formData.countryCode}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-              required
-            />
-
-            {/* Company */}
-            <input
-              type="text"
-              name="company"
-              placeholder="Company"
-              value={formData.company}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-            />
-
-            {/* Email */}
-            <input
-              type="email"
-              name="email"
-              placeholder="Email*"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-              required
-            />
-
-            {/* Phone */}
-            <div className="flex gap-3">
-              <select
-                name="countryCode"
-                value={formData.countryCode}
-                onChange={handleChange}
-                className="w-24 px-3 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-slate-700"
-              >
-                <option value="+1">🇺🇸 +1</option>
-                <option value="+91">🇮🇳 +91</option>
-                <option value="+44">🇬🇧 +44</option>
-                <option value="+86">🇨🇳 +86</option>
-              </select>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                value={formData.phone}
-                onChange={handleChange}
-                className="flex-1 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-              />
-            </div>
-
-            {/* Requirement */}
-            <textarea
-              name="requirement"
-              placeholder="Sourcing requirement*"
-              value={formData.requirement}
-              onChange={handleChange}
-              rows="4"
-              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none"
-              required
-            />
-
-            {/* Submit Button */}
-            <button
-              onClick={handleSubmit}
-              className="w-full bg-slate-400 hover:bg-slate-500 text-white font-semibold py-3 rounded-lg transition-colors duration-200"
+              className="w-24 px-3 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 text-slate-700"
             >
-              SUBMIT
-            </button>
+              <option value="+91">🇮🇳 +91</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+86">🇨🇳 +86</option>
+            </select>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+              className="flex-1 px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500"
+            />
           </div>
-        </div>
+
+          {/* Requirement */}
+          <textarea
+            name="requirement"
+            placeholder="Sourcing requirement*"
+            value={formData.requirement}
+            onChange={handleChange}
+            rows="3"
+            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 resize-none"
+            required
+          />
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full bg-[#2D5DD5] hover:bg-[#253F83] text-white font-semibold py-3 rounded-lg transition duration-200"
+          >
+            SUBMIT
+          </button>
+        </form>
       </div>
     </div>
   );

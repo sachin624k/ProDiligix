@@ -1,12 +1,9 @@
-import { use } from "react";
-import UserContext from "./UserContext";
 import { createContext, useContext, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const ScrollContext = createContext();
 
-function UserContextProvider({ children }) {
-  const name = "sanket Yadav";
+export const ScrollProvider = ({ children }) => {
   const { pathname } = useLocation();
 
   // Automatically scroll to top when route changes
@@ -21,9 +18,13 @@ function UserContextProvider({ children }) {
       behavior: smooth ? "smooth" : "auto",
     });
   };
-  return (
-    <UserContext.Provider value={{ name,scrollToTop  }}>{children}</UserContext.Provider>
-  );
-}
 
-export default UserContextProvider;
+  return (
+    <ScrollContext.Provider value={{ scrollToTop }}>
+      {children}
+    </ScrollContext.Provider>
+  );
+};
+
+// Custom hook for easy use
+export const useScroll = () => useContext(ScrollContext);

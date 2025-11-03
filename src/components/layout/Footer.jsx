@@ -1,44 +1,47 @@
-import React from 'react';
-import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 export default function Footer() {
   const footerSections = [
     {
       title: "Our services",
       links: [
-        "E2E Sourcing",
-        "Procurement as a Service",
-        "Contract Manufacturing",
-        "Trade Financing"
-      ]
+        { name: "Logistics Management", path: "/LogisticsManagement" },
+        { name: "Corporate Gifting", path: "/CorporateGifting" },
+        { name: "Eventmanagement", path: "/Eventmanagement" },
+        { name: "IT solutions", path: "/ITsolutions" },
+        { name: "Stamp Pepper", path: "/StampPepper" },
+        { name: "Team Building", path: "/TeamBuilding" },
+      ],
     },
     {
       title: "Your Business",
       links: [
-        "Retailers",
-        "Brands",
-        "Distributors",
-        "Manufacturers",
-        "Fulfillment",
-        "eCommerce"
-      ]
+        { name: "Retailers", path: "/Retailers" },
+        { name: "Brands", path: "/Brands" },
+        { name: "Distributors", path: "/Distributors" },
+        { name: "Manufacturers", path: "/Manufacturers" },
+        { name: "Fulfillment", path: "/Fulfillment" },
+        { name: "eCommerce", path: "/eCommerce" },
+      ],
     },
     {
       title: "About Us",
       links: [
-        "Company",
-        "Sustainability",
-        "Contact"
-      ]
+        { name: "Company", path: "/Company" },
+        { name: "Sustainability", path: "/Sustainability" },
+        { name: "Contact", path: "/Contact" },
+      ],
     },
     {
       title: "Resources",
       links: [
-        "Blogs",
-        "FAQ",
-        "Privacy Policy"
-      ]
-    }
+        { name: "Blogs", path: "/Blogs" },
+        { name: "FAQ", path: "/FAQ" },
+        { name: "Privacy Policy", path: "/PrivacyPolicy" },
+      ],
+    },
   ];
 
   return (
@@ -54,12 +57,12 @@ export default function Footer() {
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a
-                      href="#"
+                    <Link
+                      to={link.path}
                       className="text-gray-700 hover:text-gray-900 text-sm transition-colors"
                     >
-                      {link}
-                    </a>
+                      {link.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -74,35 +77,35 @@ export default function Footer() {
           <p className="text-gray-700 text-sm">
             Copyright © 2023 ProDiligix.com
           </p>
-          
+
           <div className="flex gap-3">
             <a
               href="#"
               className="w-9 h-9 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center transition-colors"
               aria-label="Facebook"
             >
-              <Facebook className="w-5 h-5 text-white" fill="currentColor" />
+              <Facebook className="w-5 h-5 text-white" />
             </a>
             <a
               href="#"
               className="w-9 h-9 rounded-full bg-sky-400 hover:bg-sky-500 flex items-center justify-center transition-colors"
               aria-label="Twitter"
             >
-              <Twitter className="w-5 h-5 text-white" fill="currentColor" />
+              <Twitter className="w-5 h-5 text-white" />
             </a>
             <a
               href="#"
               className="w-9 h-9 rounded-full bg-blue-700 hover:bg-blue-800 flex items-center justify-center transition-colors"
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-5 h-5 text-white" fill="currentColor" />
+              <Linkedin className="w-5 h-5 text-white" />
             </a>
             <a
               href="#"
               className="w-9 h-9 rounded-full bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 flex items-center justify-center transition-all"
               aria-label="Instagram"
             >
-              <Instagram className="w-5 h-5 text-white" fill="currentColor" />
+              <Instagram className="w-5 h-5 text-white" />
             </a>
           </div>
         </div>
