@@ -51,7 +51,7 @@ const Navbar = () => {
                     { path: "/CorporateGifting", label: "Corporate Gifting" },
                     { path: "/Eventmanagement", label: "Event Management" },
                     { path: "/ITsolutions", label: "IT Solutions" },
-                    { path: "/StampPepper", label: "Stamp Pepper" },
+                    { path: "/StampPepper", label: "Stamp Paper" },
                     { path: "/TeamBuilding", label: "Team Building" },
                   ].map((item) => (
                     <Link

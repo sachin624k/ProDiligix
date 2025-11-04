@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Clock, Zap } from "lucide-react";
+import whatsappImage from "../assets/images/India.png"
+
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -58,7 +60,7 @@ export default function ContactSection() {
     <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-12 px-6 flex items-center justify-center">
       <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-8 items-start">
         {/* Left Section */}
-        <div className="text-white space-y-8 ">
+        <div className="text-white space-y-4 ">
           <div className="text-center">
             <h1 className="text-2xl font-bold mb-3">Powering the Global Supply Chain</h1>
             <p className="text-slate-300 text-lg">
@@ -67,7 +69,6 @@ export default function ContactSection() {
           </div>
 
           {/* Feature Cards */}
-          <div className="grid grid-cols-2 gap-4 justify-center">
             <div className="bg-red-50 rounded-2xl p-5 text-center space-y-3">
               <div className="flex justify-center">
                 <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
@@ -78,20 +79,8 @@ export default function ContactSection() {
                 <p className="font-semibold">2-5x Faster</p>
                 <p className="text-sm text-slate-600">Turn Around</p>
               </div>
+              <img src={whatsappImage} alt="" className="w-[80%] mx-auto" />
             </div>
-
-            <div className="bg-purple-50 rounded-2xl p-5 text-center space-y-3">
-              <div className="flex justify-center">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-red-500" strokeWidth={2.5} />
-                </div>
-              </div>
-              <div className="text-slate-800">
-                <p className="font-semibold">24x7 Realtime</p>
-                <p className="text-sm text-slate-600">Visibility on PO</p>
-              </div>
-            </div>
-          </div>
 
           <p className="text-slate-400 text-sm text-center max-w-md mx-auto">
             By submitting this form, you agree that ProDiligix may contact you with
