@@ -5,7 +5,6 @@ import Catalog from "../pages/Catalog.jsx";
 import About from "../pages/About.jsx";
 import Contact from "../pages/contact.jsx";
 import Blog from "../pages/Blog.jsx";
-import BlogDetail from "../pages/BlogDetail.jsx";
 import LogisticsManagement from "../pages/ServicesPage/LogisticsManagement.jsx";
 import CorporateGifting from "../pages/ServicesPage/CorporateGifting.jsx";
 import Eventmanagement from "../pages/ServicesPage/Eventmanagement.jsx";
@@ -13,6 +12,7 @@ import ITsolutions from "../pages/ServicesPage/ITsolutions.jsx";
 import StampPepper from "../pages/ServicesPage/StampPepper.jsx";
 import TeamBuilding from "../pages/ServicesPage/TeamBuilding.jsx";
 import { ScrollProvider } from "../context/ScrollContext.jsx";
+import YourBusinesses from "../pages/YourBusinesses.jsx";
 
 const AppRoutes = () => {
   return (
@@ -25,7 +25,6 @@ const AppRoutes = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:id" element={<BlogDetail />} />
 
             {/* //Services */}
             <Route
@@ -36,7 +35,7 @@ const AppRoutes = () => {
             <Route path="/Eventmanagement" element={<Eventmanagement />} />
             <Route path="/ITsolutions" element={<ITsolutions />} />
             <Route path="/StampPepper" element={<StampPepper />} />
-            <Route path="/TeamBuilding" element={<TeamBuilding />} />
+            <Route path="/businesses" element={<YourBusinesses />} />
           </Routes>
         </ScrollProvider>
       </Layout>
