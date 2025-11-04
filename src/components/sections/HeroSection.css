@@ -151,3 +151,8 @@
 .delay-5 {
   animation-delay: 0.5s;
 }
+@media (max-width: 762px) {
+  .hero-image-container {
+    display: none;
+  }
+}

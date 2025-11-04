@@ -70,7 +70,7 @@ const StampPaperProcurement = () => {
             >
               <div className="flex items-center gap-4 mb-4">
                 {service.icon}
-                <h2 className="text-xl font-semibold text-[#253F83]">
+                <h2 className="text-xl font-semibold text-gray-900">
                   {service.title}
                 </h2>
               </div>

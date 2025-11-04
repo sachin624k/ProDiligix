@@ -80,7 +80,7 @@ const ITSolutions = () => {
             >
               <div className="flex items-center gap-4 mb-4">
                 {solution.icon}
-                <h2 className="text-xl font-semibold text-[#253F83]">
+                <h2 className="text-xl font-semibold text-gray-900">
                   {solution.title}
                 </h2>
               </div>
