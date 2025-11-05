@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "../components/layout/Layout.jsx";
 import Home from "../pages/Home.jsx";
-import Catalog from "../pages/Catalog.jsx";
 import About from "../pages/About.jsx";
 import Contact from "../pages/contact.jsx";
-import Blog from "../pages/Blog.jsx";
+import Blog from "../pages/Login.jsx";
 import LogisticsManagement from "../pages/ServicesPage/LogisticsManagement.jsx";
 import CorporateGifting from "../pages/ServicesPage/CorporateGifting.jsx";
 import Eventmanagement from "../pages/ServicesPage/Eventmanagement.jsx";
@@ -13,6 +12,8 @@ import StampPepper from "../pages/ServicesPage/StampPepper.jsx";
 import TeamBuilding from "../pages/ServicesPage/TeamBuilding.jsx";
 import { ScrollProvider } from "../context/ScrollContext.jsx";
 import YourBusinesses from "../pages/YourBusinesses.jsx";
+import Track from "../pages/Track.jsx";
+import ContactSection from "../components/sections/ContactSection.jsx";
 
 const AppRoutes = () => {
   return (
@@ -21,10 +22,11 @@ const AppRoutes = () => {
         <ScrollProvider>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/track" element={<Track />} />
             <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<ContactSection />} />
+            <Route path="/contactUs" element={<Contact />} />
+            <Route path="/login" element={<Blog />} />
 
             {/* //Services */}
             <Route

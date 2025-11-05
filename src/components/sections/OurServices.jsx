@@ -15,24 +15,28 @@ const services = [
     description:
       "All-in-one logistics platform offering Air, Surface, and Railway transport with real-time tracking and unified control.",
     image: logoImg,
+    path:"/LogisticsManagement"
   },
   {
     title: "Corporate Gifting",
     description:
       "Custom corporate gifting that strengthens relationships and delivers unforgettable brand experiences.",
     image: giftImg,
+        path:"/CorporateGifting"
   },
   {
     title: "Event Management",
     description:
       "From corporate conferences to large-scale events, we plan, organize, and execute every detail with precision.",
     image: eventImg,
+        path:"/Eventmanagement"
   },
   {
     title: "Team Building Activities",
     description:
       "Engage your teams through curated offsites, team activities, and workshops designed to inspire collaboration.",
     image: teamImg,
+        path:"/TeamBuilding"
   },
   {
     title: "IT Solutions",
@@ -40,12 +44,14 @@ const services = [
       "Empowering your business with automation, digital tools, and cloud-based solutions for the modern era.",
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=60",
+          path:"/ITsolutions"
   },
   {
     title: "Stamp Paper Procurement",
     description:
       "Authentic stamp paper procurement for all your legal and compliance requirements, hassle-free.",
     image: stampImg,
+        path:"/StampPepper"
   },
 ];
 
@@ -99,7 +105,7 @@ export default function OurServices() {
               <div className="service-text">
                 <h3 className="service-title">{service.title}</h3>
                 <p className="service-description">{service.description}</p>
-                <a href="#" className="service-link">
+                <a href={`${service.path}`} className="service-link">
                   Learn More
                   <ArrowRight className="arrow-icon" />
                 </a>

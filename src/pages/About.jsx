@@ -104,7 +104,7 @@ export default function About() {
             className="mt-8"
           >
             <a
-              href="/contact?title=Book%20Meeting"
+              href="/contact"
               className="inline-flex items-center rounded-xl px-5 py-3 font-semibold bg-[#2D5DD5] text-white hover:bg-[#253F83] transition-colors shadow"
             >
               Book Meeting
@@ -283,7 +283,7 @@ style={{
                 </p>
               </div>
               <a
-                href="/contact?title=Book%20Meeting"
+                href="/contact"
                 className="inline-flex items-center rounded-xl px-5 py-3 font-semibold bg-white text-[#2D5DD5] hover:bg-blue-100 hover:text-[#253F83] transition-colors shadow"
               >
                 Book Meeting

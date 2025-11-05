@@ -18,28 +18,18 @@ export default function Footer() {
     {
       title: "Your Business",
       links: [
-        { name: "Retailers", path: "/Retailers" },
-        { name: "Brands", path: "/Brands" },
-        { name: "Distributors", path: "/Distributors" },
-        { name: "Manufacturers", path: "/Manufacturers" },
-        { name: "Fulfillment", path: "/Fulfillment" },
-        { name: "eCommerce", path: "/eCommerce" },
+        { name: "IT Industry", path: "/businesses" },
+        { name: "Manufacturing", path: "/businesses" },
+        { name: "ECommerce", path: "/businesses" },
+        { name: "FMCG", path: "/businesses" },
+        { name: "Service Sectors", path: "/businesses" },
       ],
     },
     {
       title: "About Us",
       links: [
-        { name: "Company", path: "/Company" },
-        { name: "Sustainability", path: "/Sustainability" },
-        { name: "Contact", path: "/Contact" },
-      ],
-    },
-    {
-      title: "Resources",
-      links: [
-        { name: "Blogs", path: "/Blogs" },
-        { name: "FAQ", path: "/FAQ" },
-        { name: "Privacy Policy", path: "/PrivacyPolicy" },
+        { name: "Company", path: "/about" },
+        { name: "Contact US", path: "/contactUs" },
       ],
     },
   ];
@@ -48,7 +38,7 @@ export default function Footer() {
     <footer className="bg-gray-100">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
           {footerSections.map((section, index) => (
             <div key={index}>
               <h3 className="font-semibold text-gray-900 mb-4">

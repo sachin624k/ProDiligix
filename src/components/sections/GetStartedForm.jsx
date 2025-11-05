@@ -42,7 +42,7 @@ const GetStartedForm = () => {
 
     const res = await fetch("/api/pincode/276201");
     const result = await res.json();
-    navigate("/blog", { state: { result } });
+    navigate("/", { state: { result } });
     
   };
 
