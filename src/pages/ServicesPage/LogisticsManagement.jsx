@@ -72,21 +72,60 @@ const LogisticsManagement = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Top Image */}
-      <div className="w-full">
+      <style>{`
+        /* Premium animations (same vibe as other page) */
+        @keyframes popFade {
+          0%   { opacity: 0; transform: translateY(16px) scale(.985); filter: blur(6px); }
+          100% { opacity: 1; transform: translateY(0)   scale(1);     filter: blur(0); }
+        }
+        @keyframes glowPulse {
+          0%, 100% { opacity: .15; transform: scale(1); }
+          50%      { opacity: .30; transform: scale(1.02); }
+        }
+        .animate-popFade { animation: popFade .7s cubic-bezier(.22,.75,.2,1) both; }
+        .animate-popFadeDelay { animation: popFade .8s .08s cubic-bezier(.22,.75,.2,1) both; }
+
+        /* Ambient glow behind the hero title card */
+        .card-hero { position: relative; isolation: isolate; }
+        .card-hero::before {
+          content: "";
+          position: absolute;
+          inset: -16px;
+          z-index: -1;
+          background: radial-gradient(40% 60% at 50% 40%, ${BRAND} 0%, rgba(36,107,237,0) 70%);
+          filter: blur(24px);
+          opacity: .18;
+          border-radius: 20px;
+          animation: glowPulse 4.2s ease-in-out infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .animate-popFade, .animate-popFadeDelay, .card-hero::before { animation: none; }
+        }
+      `}</style>
+
+      {/* ======= HERO (full-bleed image with overlapping title card) ======= */}
+      <section className="relative h-[420px] md:h-[520px] w-full overflow-visible">
         <img
-          src="https://images.unsplash.com/photo-1505839673365-e3971f8d9184?auto=format&fit=crop&w=1600&q=80"
-          alt="Logistics Management"
-          className="w-full h-64 md:h-96 object-cover"
+          src={heroImg}
+          alt="Logistics Management cover"
+          className="absolute inset-0 h-full w-full object-cover"
         />
-      </div>
+        <div className="absolute inset-0 bg-black/30" />
 
-      {/* Content Section */}
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <h1 className="text-3xl md:text-4xl font-bold text-[#2D5DD5] mb-10 text-center">
-          Logistics Management
-        </h1>
+        {/* Title Card */}
+        <div className="absolute left-1/2 bottom-0 translate-y-1/2 -translate-x-1/2 z-20 w-full max-w-3xl px-6">
+          <div className="card-hero bg-white rounded-xl shadow-[0_15px_40px_rgba(0,0,0,0.25)] px-6 md:px-12 py-6 md:py-8 animate-popFade text-center">
+            <h1 className="font-extrabold leading-tight text-[36px] md:text-[56px]">
+              <span className="text-black">Logistics</span>{" "}
+              <span style={{ color: BRAND }}>Management</span>
+            </h1>
+          </div>
+        </div>
+      </section>
 
+      {/* ======= CARDS GRID ======= */}
+      <div className="max-w-6xl mx-auto px-6 pt-24 md:pt-36 pb-12">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
