@@ -36,6 +36,7 @@ const AppRoutes = () => {
             <Route path="/ITsolutions" element={<ITsolutions />} />
             <Route path="/StampPepper" element={<StampPepper />} />
             <Route path="/businesses" element={<YourBusinesses />} />
+            <Route path="/TeamBuilding" element={<TeamBuilding />} />
           </Routes>
         </ScrollProvider>
       </Layout>
