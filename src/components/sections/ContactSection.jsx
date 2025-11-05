@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Zap } from "lucide-react";
+import { Clock, Zap } from "lucide-react";
 import whatsappImage from "../assets/images/India.png";
 
 const countries = [
@@ -68,22 +68,35 @@ export default function ContactSection() {
             Partnering with you from Sourcing to Delivery
           </p>
 
-          {/* Card */}
-          <div className="bg-red-50 rounded-2xl p-6 max-w-sm mx-auto lg:mx-0 text-center space-y-3 shadow-md">
-            <div className="flex justify-center">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow">
-                <Zap className="w-5 h-5 text-red-500" strokeWidth={2.5} />
+          <div className="grid grid-cols-2 gap-4">
+            {/* Card 1 */}
+            <div className="bg-red-50 rounded-2xl p-6 text-center space-y-3">
+              <div className="flex justify-center">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                  <Zap className="w-6 h-6 text-red-500" strokeWidth={2.5} />
+                </div>
+              </div>
+              <div className="text-slate-800">
+                <p className="font-semibold">2-5x Faster</p>
+                <p className="text-sm text-slate-600">Turn Around</p>
               </div>
             </div>
-            <div className="text-slate-800">
-              <p className="font-semibold text-lg">2-5x Faster</p>
-              <p className="text-sm text-slate-600">Turn Around</p>
+
+
+
+
+            {/* Card 4 */}
+            <div className="bg-purple-50 rounded-2xl p-6 text-center space-y-3">
+              <div className="flex justify-center">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                  <Clock className="w-6 h-6 text-red-500" strokeWidth={2.5} />
+                </div>
+              </div>
+              <div className="text-slate-800">
+                <p className="font-semibold">24x7 Realtime</p>
+                <p className="text-sm text-slate-600">Visibility on PO</p>
+              </div>
             </div>
-            <img
-              src={whatsappImage}
-              alt="India"
-              className="w-[85%] sm:w-[70%] md:w-[60%] mx-auto"
-            />
           </div>
 
           <p className="text-white text-sm max-w-md mx-auto lg:mx-0">
@@ -134,10 +147,11 @@ export default function ContactSection() {
           <input
             type="text"
             name="company"
-            placeholder="Company"
+            placeholder="Company*"
             value={formData.company}
             onChange={handleChange}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500"
+            required
           />
 
           {/* Email */}
